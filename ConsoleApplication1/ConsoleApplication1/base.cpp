@@ -13,6 +13,8 @@ struct Answer {
   int result;
 };
 
+
+//Переделать ГПС
 int getRandInt(int nMin, int nMax)
 {
   return nMin + (int)((double)rand() / (RAND_MAX + 1) * (nMax - nMin + 1));
