@@ -2,22 +2,23 @@
 #include <vector>
 #include <cstdlib>
 #include <string>
+#include <random>
 #include <ctype.h>
 
 using std::string;
 
 string action[] = { "+", "-" };
+std::default_random_engine rng;
 
 struct Answer {
   std::vector<string> expression;
   int result;
 };
 
-
-//Переделать ГПС
 int getRandInt(int nMin, int nMax)
 {
-  return nMin + (int)((double)rand() / (RAND_MAX + 1) * (nMax - nMin + 1));
+  std::uniform_int_distribution<int> dist_min_max(nMin, nMax);
+  return dist_min_max(rng);
 }
 
 string getAction() {
