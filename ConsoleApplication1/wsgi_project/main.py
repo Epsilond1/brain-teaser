@@ -1,4 +1,6 @@
 -*-condig:UTF-8-*-
 
-def print():
-	print "abcde"
+def print(name):
+	print(name)
+
+name = input()
